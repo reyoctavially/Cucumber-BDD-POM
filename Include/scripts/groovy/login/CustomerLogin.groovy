@@ -46,24 +46,29 @@ import pageObjectModel.loginPage
 
 class CustomerLogin {
 
-	@Given("Customer is on the Voila login page")
-	def customerIsOnTheVoilaLoginPage() {
+	@Given("Customer is on the landing page")
+	def customerIsOnTheLandingPage() {
 		loginPage.open()
 	}
+	
+	@When("Customer clicks the login button to navigate to the login page")
+	def customerNavigateToTheLoginPage() {
+		loginPage.clickLoginButtonToNavigate()
+	}
 
-	@When("Customer enters valid email {string} and password {string}")
+	@And("Customer enters valid email {string} and password {string}")
 	def customerEntersValidEmailAndPassword(String email, String password) {
 		loginPage.enterEmail(email)
 		loginPage.enterPassword(password)
 	}
 
-	@When("Customer clicks the login button")
+	@And("Customer clicks the login button")
 	def customerClicksTheLoginButton() {
 		loginPage.clickLoginButton()
 	}
 
-	@Then("Customer should see the dashboard")
-	def customerShouldSeeTheDashboard() {
-		loginPage.seeDashboardElement()
+	@Then("Customer should see the home page")
+	def customerShouldSeeTheHomePage() {
+		loginPage.seeHomePageElement()
 	}
 }
