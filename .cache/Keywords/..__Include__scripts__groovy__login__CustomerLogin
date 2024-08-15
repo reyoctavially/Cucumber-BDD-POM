@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "660B900BBA1002FC17E16A8B58A26772",
+  "keywordClasses": [
+    {
+      "name": "login.CustomerLogin",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": false
+}
