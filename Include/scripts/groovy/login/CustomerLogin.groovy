@@ -49,7 +49,7 @@ class CustomerLogin {
 
 	@Given("Customer is on the landing page")
 	def customerIsOnTheLandingPage() {
-		loginPage.open()
+		homePage.open()
 	}
 
 	@When("Customer clicks the login button to navigate to the login page")
@@ -70,6 +70,6 @@ class CustomerLogin {
 
 	@Then("Customer should see the home page")
 	def customerShouldSeeTheHomePage() {
-		homePage.seeHomePageLogo()
+		homePage.verifyHomePage()
 	}
 }

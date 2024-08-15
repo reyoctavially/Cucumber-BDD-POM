@@ -32,7 +32,7 @@ public class homePage {
 		WebUI.navigateToUrl(GlobalVariable.homePageUrl)
 	}
 
-	static void seeHomePageLogo() {
+	static void verifyHomePage() {
 		WebUI.delay(5)
 		WebUI.verifyElementPresent(HOMEPAGE_LOGO, 30)
 		WebUI.takeFullPageScreenshotAsCheckpoint('WELCOME TO HOME PAGE')
