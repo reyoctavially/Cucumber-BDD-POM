@@ -22,29 +22,34 @@ import internal.GlobalVariable
 import com.kms.katalon.core.testobject.ConditionType
 
 public class loginPage {
-	static final String LOGIN_PAGE_URL = 'https://example.com/login'
-	static final String USERNAME_INPUT = 'Object Repository/LoginPage/Username_Input'
-	static final String PASSWORD_INPUT = 'Object Repository/LoginPage/Password_Input'
-	static final String LOGIN_BUTTON = 'Object Repository/LoginPage/Login_Button'
-	static final String DASHBOARD_ELEMENT = 'Object Repository/Dashboard/Welcome_Message'
-
-	static void open() {
-		WebUI.openBrowser(LOGIN_PAGE_URL)
-	}
-
-	static void enterUsername(String username) {
-		WebUI.setText(findTestObject(USERNAME_INPUT), username)
-	}
-
-	static void enterPassword(String password) {
-		WebUI.setText(findTestObject(PASSWORD_INPUT), password)
-	}
-
-	static void clickLoginButton() {
-		WebUI.click(findTestObject(LOGIN_BUTTON))
-	}
 	
-	static void seeDashboardElement() {
-		WebUI.verifyElementPresent(findTestObject(DASHBOARD_ELEMENT), 10)
-	}
+	static final TestObject EMAIL_INPUT = new TestObject().addProperty('id', ConditionType.EQUALS, 'txt_email')
+    static final TestObject PASSWORD_INPUT = new TestObject().addProperty('id', ConditionType.EQUALS, 'txt_password')
+    static final TestObject LOGIN_BUTTON = new TestObject().addProperty('id', ConditionType.EQUALS, 'btn_login')
+    static final TestObject DASHBOARD_ELEMENT = new TestObject().addProperty('id', ConditionType.EQUALS, 'txt_dashboard')
+
+    static void open() {
+        WebUI.enableSmartWait()
+        WebUI.openBrowser('')
+        WebUI.navigateToUrl('https://voila.id/account/login')
+        WebUI.maximizeWindow()
+    }
+
+    static void enterEmail(String email) {
+        WebUI.waitForElementVisible(EMAIL_INPUT, 10)
+        WebUI.setText(EMAIL_INPUT, email)
+    }
+
+    static void enterPassword(String password) {
+        WebUI.waitForElementVisible(PASSWORD_INPUT, 10)
+        WebUI.setText(PASSWORD_INPUT, password)
+    }
+
+    static void clickLoginButton() {
+        WebUI.click(LOGIN_BUTTON)
+    }
+    
+    static void seeDashboardElement() {
+        WebUI.verifyElementPresent(DASHBOARD_ELEMENT, 10)
+    }
 }

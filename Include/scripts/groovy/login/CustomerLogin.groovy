@@ -53,7 +53,7 @@ class CustomerLogin {
 
 	@When("Customer enters valid email {string} and password {string}")
 	def customerEntersValidEmailAndPassword(String email, String password) {
-		loginPage.enterUsername(email)
+		loginPage.enterEmail(email)
 		loginPage.enterPassword(password)
 	}
 
