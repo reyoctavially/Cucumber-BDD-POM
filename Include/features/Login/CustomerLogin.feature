@@ -1,7 +1,7 @@
 #Author: reynaldi.octavially@gmail.com
 Feature: Customer Login
 
-  @userLogin
+  @customerLogin
   Scenario Outline: Successful login with valid credentials
     Given Customer is on the Voila login page
     When Customer enters valid email "<email>" and password "<password>"

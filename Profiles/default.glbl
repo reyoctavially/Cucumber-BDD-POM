@@ -4,4 +4,14 @@
    <name>default</name>
    <tag></tag>
    <defaultProfile>true</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://voila.id/'</initValue>
+      <name>urlVoila</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://voila.id/account/login'</initValue>
+      <name>urlVoilaLogin</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

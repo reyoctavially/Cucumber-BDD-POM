@@ -20,36 +20,44 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import internal.GlobalVariable
 import com.kms.katalon.core.testobject.ConditionType
+import com.kms.katalon.core.configuration.RunConfiguration
 
 public class loginPage {
-	
-	static final TestObject EMAIL_INPUT = new TestObject().addProperty('id', ConditionType.EQUALS, 'txt_email')
-    static final TestObject PASSWORD_INPUT = new TestObject().addProperty('id', ConditionType.EQUALS, 'txt_password')
-    static final TestObject LOGIN_BUTTON = new TestObject().addProperty('id', ConditionType.EQUALS, 'btn_login')
-    static final TestObject DASHBOARD_ELEMENT = new TestObject().addProperty('id', ConditionType.EQUALS, 'txt_dashboard')
 
-    static void open() {
-        WebUI.enableSmartWait()
-        WebUI.openBrowser('')
-        WebUI.navigateToUrl('https://voila.id/account/login')
-        WebUI.maximizeWindow()
-    }
+	static final TestObject EMAIL_INPUT = new TestObject().addProperty('name', ConditionType.EQUALS, 'identifier')
+	static final TestObject PASSWORD_INPUT = new TestObject().addProperty('name', ConditionType.EQUALS, 'password')
+	static final TestObject LOGIN_BUTTON = new TestObject().addProperty('xpath', ConditionType.EQUALS, '//*[@id="base"]/button')
+	static final TestObject DASHBOARD_ELEMENT = new TestObject().addProperty('xpath', ConditionType.EQUALS, '//*[@id="base"]/img')
 
-    static void enterEmail(String email) {
-        WebUI.waitForElementVisible(EMAIL_INPUT, 10)
-        WebUI.setText(EMAIL_INPUT, email)
-    }
+	static void open() {
+		RunConfiguration.setWebDriverPreferencesProperty("args", [
+			"--window-size=1280,1024",
+			"--incognito"
+		])
+		WebUI.enableSmartWait()
+		WebUI.openBrowser('')
+		WebUI.navigateToUrl(GlobalVariable.urlVoilaLogin)
+	}
 
-    static void enterPassword(String password) {
-        WebUI.waitForElementVisible(PASSWORD_INPUT, 10)
-        WebUI.setText(PASSWORD_INPUT, password)
-    }
+	static void enterEmail(String email) {
+		WebUI.waitForElementVisible(EMAIL_INPUT, 10)
+		WebUI.setText(EMAIL_INPUT, email)
+	}
 
-    static void clickLoginButton() {
-        WebUI.click(LOGIN_BUTTON)
-    }
-    
-    static void seeDashboardElement() {
-        WebUI.verifyElementPresent(DASHBOARD_ELEMENT, 10)
-    }
+	static void enterPassword(String password) {
+		WebUI.waitForElementVisible(PASSWORD_INPUT, 10)
+		WebUI.setText(PASSWORD_INPUT, password)
+	}
+
+	static void clickLoginButton() {
+		WebUI.waitForPageLoad(15, FailureHandling.STOP_ON_FAILURE)
+		WebUI.waitForElementClickable(LOGIN_BUTTON, 10)
+		WebUI.click(LOGIN_BUTTON)
+	}
+
+	static void seeDashboardElement() {
+		WebUI.waitForPageLoad(15, FailureHandling.STOP_ON_FAILURE)
+		WebUI.verifyElementPresent(DASHBOARD_ELEMENT, 10)
+		WebUI.takeFullPageScreenshotAsCheckpoint('login')
+	}
 }

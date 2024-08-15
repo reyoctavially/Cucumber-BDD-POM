@@ -66,5 +66,4 @@ class CustomerLogin {
 	def customerShouldSeeTheDashboard() {
 		loginPage.seeDashboardElement()
 	}
-	
 }
