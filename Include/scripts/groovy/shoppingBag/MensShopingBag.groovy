@@ -1,4 +1,4 @@
-package login
+package shoppingBag
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
@@ -42,34 +42,67 @@ import cucumber.api.java.en.Given
 import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
 
-import pageObjectModel.loginPage
 import pageObjectModel.homePage
+import pageObjectModel.productPage
+import pageObjectModel.productDetailPage
+import pageObjectModel.shoppingBagPage
 
-class CustomerLogin {
+class MensShopingBag {
 
-	@Given("Customer is on the landing page")
-	def customerIsOnTheLandingPage() {
-		loginPage.open()
+	@Given("Customer is on the home page")
+	def openHomePage() {
+		homePage.open()
 	}
 
-	@When("Customer clicks the login button to navigate to the login page")
-	def customerNavigateToTheLoginPage() {
-		loginPage.clickLoginButtonToNavigate()
+	@When("Customer chooses the {string} category")
+	def chooseCategory(String category) {
+		homePage.selectCategory(category)
 	}
 
-	@And("Customer enters valid email {string} and password {string}")
-	def customerEntersValidEmailAndPassword(String email, String password) {
-		loginPage.enterEmail(email)
-		loginPage.enterPassword(password)
+	@And("Customer selects {string} from product categories")
+	def selectProductCategory(String productCategory) {
+		homePage.selectProductCategory(productCategory)
 	}
 
-	@And("Customer clicks the login button")
-	def customerClicksTheLoginButton() {
-		loginPage.clickLoginButton()
+	@And("Customer applies filters to exclude product categories {string} and {string}")
+	def applyCategoryFilters(String product1, String product2) {
+		productPage.setProductFilter(product1)
+		productPage.setProductFilter(product2)
 	}
 
-	@Then("Customer should see the home page")
-	def customerShouldSeeTheHomePage() {
-		homePage.seeHomePageLogo()
+	@And("Customer clicks the all filters button")
+	def clickAllFiltersButton() {
+		productPage.clickAllFilterButton()
+	}
+
+	@And("Customer applies a price filter for products below {string}")
+	def applyPriceFilter(String price) {
+		productPage.setPriceFilter(price)
+	}
+
+	@And("Customer selects an available product")
+	def selectAvailableProduct() {
+		productPage.selectProduct()
+	}
+
+	@And("Customer is on the product detail page")
+	def verifyProductDetailPage() {
+		productDetailPage.verifyProductDetail()
+	}
+
+	@And("Customer chooses an available product size")
+	def chooseProductSize() {
+		productDetailPage.selectProductSize()
+	}
+
+	@And("Customer clicks the add to bag button")
+	def clickAddToBagButton() {
+		productDetailPage.clickAddToBagButton()
+	}
+
+	@Then("Customer should see the product successfully added to the shopping bag")
+	def verifyProductAddedToShoppingBag() {
+		homePage.clickShoppingBagButton()
+		shoppingBagPage.verifyProduct()
 	}
 }

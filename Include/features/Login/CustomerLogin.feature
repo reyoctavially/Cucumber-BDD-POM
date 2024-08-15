@@ -2,7 +2,7 @@
 
 Feature: Customer Login
 
-  @customerLogin
+@customerLogin
 Scenario Outline: Successful login with valid credentials
   Given Customer is on the landing page
   When Customer clicks the login button to navigate to the login page
@@ -11,5 +11,5 @@ Scenario Outline: Successful login with valid credentials
   Then Customer should see the home page
 
     Examples:
-      | email                          | password   |
+      | email                          | password    |
       | reynaldi.octavially@gmail.com  | @Aquila1998 |

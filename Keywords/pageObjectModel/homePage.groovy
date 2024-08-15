@@ -22,31 +22,28 @@ import internal.GlobalVariable
 import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.configuration.RunConfiguration
 
-public class loginPage {
+public class homePage {
+	static final TestObject HOMEPAGE_LOGO = new TestObject().addProperty('xpath', ConditionType.EQUALS, '//*[@id="base"]/img')
 
-	static final TestObject EMAIL_INPUT = new TestObject().addProperty('name', ConditionType.EQUALS, 'identifier')
-	static final TestObject PASSWORD_INPUT = new TestObject().addProperty('name', ConditionType.EQUALS, 'password')
-	static final TestObject LOGIN_BUTTON_NAVIGATE = new TestObject().addProperty('xpath', ConditionType.EQUALS, '//*[@id="base"]/button[1]')
-	static final TestObject LOGIN_BUTTON = new TestObject().addProperty('xpath', ConditionType.EQUALS, '//*[@id="base"]/button')
+	static void open() {
+		RunConfiguration.setWebDriverPreferencesProperty("args", ["--window-size=1280,1024", "--incognito"])
+		WebUI.enableSmartWait()
+		WebUI.openBrowser('')
+		WebUI.navigateToUrl(GlobalVariable.homePageUrl)
+	}
 
-	static void clickLoginButtonToNavigate() {
+	static void seeHomePageLogo() {
 		WebUI.delay(5)
-		WebUI.waitForElementClickable(LOGIN_BUTTON_NAVIGATE, 30)
-		WebUI.click(LOGIN_BUTTON_NAVIGATE)
+		WebUI.verifyElementPresent(HOMEPAGE_LOGO, 30)
+		WebUI.takeFullPageScreenshotAsCheckpoint('WELCOME TO HOME PAGE')
 	}
 
-	static void enterEmail(String email) {
-		WebUI.waitForElementVisible(EMAIL_INPUT, 30)
-		WebUI.setText(EMAIL_INPUT, email)
+	static void selectCategory(String category) {
 	}
 
-	static void enterPassword(String password) {
-		WebUI.waitForElementVisible(PASSWORD_INPUT, 30)
-		WebUI.setText(PASSWORD_INPUT, password)
+	static void selectProductCategory(String productCategory) {
 	}
 
-	static void clickLoginButton() {
-		WebUI.waitForElementClickable(LOGIN_BUTTON, 30)
-		WebUI.click(LOGIN_BUTTON)
+	static void clickShoppingBagButton() {
 	}
 }

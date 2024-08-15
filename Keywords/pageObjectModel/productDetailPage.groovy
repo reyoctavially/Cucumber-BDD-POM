@@ -22,31 +22,15 @@ import internal.GlobalVariable
 import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.configuration.RunConfiguration
 
-public class loginPage {
+public class productDetailPage {
 
-	static final TestObject EMAIL_INPUT = new TestObject().addProperty('name', ConditionType.EQUALS, 'identifier')
-	static final TestObject PASSWORD_INPUT = new TestObject().addProperty('name', ConditionType.EQUALS, 'password')
-	static final TestObject LOGIN_BUTTON_NAVIGATE = new TestObject().addProperty('xpath', ConditionType.EQUALS, '//*[@id="base"]/button[1]')
-	static final TestObject LOGIN_BUTTON = new TestObject().addProperty('xpath', ConditionType.EQUALS, '//*[@id="base"]/button')
-
-	static void clickLoginButtonToNavigate() {
-		WebUI.delay(5)
-		WebUI.waitForElementClickable(LOGIN_BUTTON_NAVIGATE, 30)
-		WebUI.click(LOGIN_BUTTON_NAVIGATE)
+	static void verifyProductDetail() {
 	}
 
-	static void enterEmail(String email) {
-		WebUI.waitForElementVisible(EMAIL_INPUT, 30)
-		WebUI.setText(EMAIL_INPUT, email)
+	static void selectProductSize() {
 	}
 
-	static void enterPassword(String password) {
-		WebUI.waitForElementVisible(PASSWORD_INPUT, 30)
-		WebUI.setText(PASSWORD_INPUT, password)
-	}
-
-	static void clickLoginButton() {
-		WebUI.waitForElementClickable(LOGIN_BUTTON, 30)
-		WebUI.click(LOGIN_BUTTON)
+	static void clickAddToBagButton() {
+		
 	}
 }
