@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "3B70859AF3E1070719038838E8C14ACA",
+  "keywordFileContentHash": "074C4A8E59344AF0A11A092B482FF2E7",
   "keywordClasses": [
     {
       "name": "pageObjectModel.homePage",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

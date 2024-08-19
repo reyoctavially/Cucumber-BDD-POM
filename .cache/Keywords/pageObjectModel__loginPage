@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "1516C1B683E0B0DBC03B31A00F4E8188",
+  "keywordFileContentHash": "0E80B6507630C2DADADE33BEB1021A55",
   "keywordClasses": [
     {
       "name": "pageObjectModel.loginPage",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

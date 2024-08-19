@@ -26,11 +26,11 @@ public class loginPage {
 
 	static final TestObject EMAIL_INPUT = new TestObject().addProperty('name', ConditionType.EQUALS, 'identifier')
 	static final TestObject PASSWORD_INPUT = new TestObject().addProperty('name', ConditionType.EQUALS, 'password')
-	static final TestObject LOGIN_BUTTON_NAVIGATE = new TestObject().addProperty('xpath', ConditionType.EQUALS, '//*[@id="base"]/button[1]')
-	static final TestObject LOGIN_BUTTON = new TestObject().addProperty('xpath', ConditionType.EQUALS, '//*[@id="base"]/button')
+	static final TestObject LOGIN_BUTTON_NAVIGATE = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//button[@class='_920fuu5 _920fuue _920fuub _920fuu6 _3syuln7']")
+	static final TestObject LOGIN_BUTTON = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//button[@class='_920fuu5 _920fuuf _920fuub _920fuu6 x63gt40']")
 
 	static void clickLoginButtonToNavigate() {
-		WebUI.delay(5)
+		WebUI.delay(3)
 		WebUI.waitForElementClickable(LOGIN_BUTTON_NAVIGATE, 30)
 		WebUI.click(LOGIN_BUTTON_NAVIGATE)
 	}

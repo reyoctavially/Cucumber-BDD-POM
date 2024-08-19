@@ -6,7 +6,7 @@ Feature: Mens Product
 Scenario Outline: Successfully display and add products to shopping cart in mens new arrivals category with price under "<price>" and not in "<product1>" or "<product2>" categories
   Given Customer is on the home page
   When Customer chooses the "<category>" category
-  And Customer selects "<category>" from product categories
+  And Customer selects "<productCategory>" from product categories
   And Customer applies filters to exclude product categories "<product1>" and "<product2>"
   And Customer clicks the all filters button
   And Customer applies a price filter for products below "<price>"

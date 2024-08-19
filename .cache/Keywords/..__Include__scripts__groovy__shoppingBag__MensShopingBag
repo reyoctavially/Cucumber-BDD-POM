@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "2E77117F5EE3A24E67E16B275E9DD143",
+  "keywordFileContentHash": "49C18F91BBC0EF4DCBF42D162D933076",
   "keywordClasses": [
     {
       "name": "shoppingBag.MensShopingBag",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

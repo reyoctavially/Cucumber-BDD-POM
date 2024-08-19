@@ -21,9 +21,13 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable
 import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.configuration.RunConfiguration
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.interactions.Actions
+import com.kms.katalon.core.webui.driver.DriverFactory
 
 public class homePage {
-	static final TestObject HOMEPAGE_LOGO = new TestObject().addProperty('xpath', ConditionType.EQUALS, '//*[@id="base"]/img')
+	static final TestObject HOMEPAGE_LOGO = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//div[@class='j1jih74b j1jih7ak      _15kd2weg']//img[@alt='voila logo']")
+	static final TestObject SECTION_TITLE = new TestObject().addProperty('id', ConditionType.EQUALS, 'base')
 
 	static void open() {
 		RunConfiguration.setWebDriverPreferencesProperty("args", ["--window-size=1280,1024", "--incognito"])
@@ -33,15 +37,29 @@ public class homePage {
 	}
 
 	static void verifyHomePage() {
-		WebUI.delay(5)
+		WebUI.waitForPageLoad(5)
 		WebUI.verifyElementPresent(HOMEPAGE_LOGO, 30)
 		WebUI.takeFullPageScreenshotAsCheckpoint('WELCOME TO HOME PAGE')
 	}
 
 	static void selectCategory(String category) {
+		TestObject CATEGORY_BUTTON = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//a[.='" + category + "']")
+		WebUI.waitForElementClickable(CATEGORY_BUTTON, 30)
+		WebUI.click(CATEGORY_BUTTON)
+		WebUI.delay(3)
 	}
 
 	static void selectProductCategory(String productCategory) {
+		TestObject PRODUCT_CATEGORY_BUTTON = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//a[.='" + productCategory + "']")
+		WebUI.waitForElementClickable(PRODUCT_CATEGORY_BUTTON, 30)
+		WebUI.click(PRODUCT_CATEGORY_BUTTON)
+		
+		WebDriver driver = DriverFactory.getWebDriver()
+		Actions actions = new Actions(driver)
+		actions.moveByOffset(10, 10).perform()
+		
+		WebUI.delay(3)
+		WebUI.waitForElementVisible(SECTION_TITLE, 30)
 	}
 
 	static void clickShoppingBagButton() {
