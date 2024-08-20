@@ -1,4 +1,4 @@
-package checkout
+package product
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
@@ -49,7 +49,7 @@ import pageObjectModel.shoppingBagPage
 import pageObjectModel.checkoutPage
 import pageObjectModel.paymentPage
 
-class CustomerCheckout {
+class ProductCheckout {
 	@Given("Customer clicks checkout button")
 	def clickCheckoutButton() {
 	    shoppingBagPage.clickCheckoutButton()

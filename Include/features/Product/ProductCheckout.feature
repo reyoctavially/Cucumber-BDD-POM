@@ -1,6 +1,6 @@
 # Author: reynaldi.octavially@gmail.com
 
-Feature: Customer Product Checkout
+Feature: Product Checkout
 
 @productCheckout
 Scenario Outline: Successfully checkout and paid using bank transfer

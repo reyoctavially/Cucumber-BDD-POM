@@ -58,7 +58,7 @@ public class productPage {
 		WebUI.waitForPageLoad(30)
 		WebUI.takeFullPageScreenshotAsCheckpoint('DISPLAY PRODUCT')
 	}
-	
+
 	static void selectProduct() {
 		int randomIndex = new Random().nextInt(5 + 1)
 		TestObject SELECT_PRODUCT = new TestObject().addProperty('css', ConditionType.EQUALS, "[data-index='" + randomIndex + "']")

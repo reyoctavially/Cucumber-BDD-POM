@@ -24,24 +24,23 @@ import com.kms.katalon.core.configuration.RunConfiguration
 
 public class checkoutPage {
 
+	static final TestObject ALL_FILTER_SECTION = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//p[.='All Filters']")
+
 	static void selectShippingMethod(String shippingMethod) {
 	}
-	
+
 	static void selectPaymentMethod(String paymentMethod) {
 	}
 
 	static void clickCheckoutButton() {
 	}
-	
+
 	static void clickConfirmPaymentMethodButton() {
-		
 	}
-	
+
 	static void verifyOrderSummary() {
-	
 	}
-	
+
 	static void clickPlaceOrderButton() {
-		
 	}
 }

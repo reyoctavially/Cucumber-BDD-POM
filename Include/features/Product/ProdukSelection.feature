@@ -1,9 +1,9 @@
 # Author: reynaldi.octavially@gmail.com
 
-Feature: Mens Shopping Bag
+Feature: Product Selection
 
-@mensNewArrival
-Scenario Outline: Successfully display and add products to shopping cart in mens new arrivals category
+@productSelection
+Scenario Outline: Successfully display and add products to shopping bag in specific category
   Given Customer chooses the "<category>" category
   When Customer selects "<productCategory>" from product categories
   And Customer applies filters product categories "<product1>", "<product2>", and "<product3>"
