@@ -1,6 +1,6 @@
 # Author: reynaldi.octavially@gmail.com
 
-Feature: Mens Product
+Feature: Customer Checkout
 
 @mensNewArrival
 Scenario Outline: Successfully display and add products to shopping cart in mens new arrivals category with price under "<price>" and not in "<product1>" or "<product2>" categories
