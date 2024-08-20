@@ -27,7 +27,7 @@ https://drive.google.com/uc?export=view&id=1lAVRBYjay68HYsCKBsVprYxCQoM_YoP7
 <h3>
     Test Case Scenario and Bug List
     <br />
-    [https://drive.google.com/file/d/1xmFsBX1MzPU4Oi9HOEeSfD3hWqqQQuk0/view?usp=drive_link](https://docs.google.com/spreadsheets/d/1Y2DxidvkR2bcehq0Pkr07AoiCndMjd-a/edit?usp=sharing&ouid=116415348848308755539&rtpof=true&sd=true)
+    https://docs.google.com/spreadsheets/d/1Y2DxidvkR2bcehq0Pkr07AoiCndMjd-a/edit?usp=sharing&ouid=116415348848308755539&rtpof=true&sd=true
 </h3>
 <h3>General Question</h3>
 1.	Can you tell us about your interests?
