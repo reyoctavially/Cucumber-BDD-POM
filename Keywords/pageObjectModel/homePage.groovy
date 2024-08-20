@@ -53,11 +53,11 @@ public class homePage {
 		TestObject PRODUCT_CATEGORY_BUTTON = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//a[.='" + productCategory + "']")
 		WebUI.waitForElementClickable(PRODUCT_CATEGORY_BUTTON, 30)
 		WebUI.click(PRODUCT_CATEGORY_BUTTON)
-		
+
 		WebDriver driver = DriverFactory.getWebDriver()
 		Actions actions = new Actions(driver)
 		actions.moveByOffset(10, 10).perform()
-		
+
 		WebUI.delay(3)
 		WebUI.waitForElementVisible(SECTION_TITLE, 30)
 	}

@@ -48,26 +48,21 @@ import pageObjectModel.productDetailPage
 import pageObjectModel.shoppingBagPage
 
 class MensShopingBag {
-
-	@Given("Customer is on the home page")
-	def openHomePage() {
-		homePage.open()
-	}
-
-	@When("Customer chooses the {string} category")
+	@Given("Customer chooses the {string} category")
 	def chooseCategory(String category) {
 		homePage.selectCategory(category)
 	}
 
-	@And("Customer selects {string} from product categories")
+	@When("Customer selects {string} from product categories")
 	def selectProductCategory(String productCategory) {
 		homePage.selectProductCategory(productCategory)
 	}
 
-	@And("Customer applies filters to exclude product categories {string} and {string}")
-	def applyCategoryFilters(String product1, String product2) {
+	@And("Customer applies filters product categories {string}, {string}, and {string}")
+	def applyCategoryFilters(String product1, String product2, String product3) {
 		productPage.setProductFilter(product1)
 		productPage.setProductFilter(product2)
+		productPage.setProductFilter(product3)
 	}
 
 	@And("Customer clicks the all filters button")
@@ -80,6 +75,11 @@ class MensShopingBag {
 		productPage.setPriceFilter(price)
 	}
 
+	@And("Customers see a list of products based on filters")
+	def seeProduct() {
+		productPage.seeProduct()
+	}
+
 	@And("Customer selects an available product")
 	def selectAvailableProduct() {
 		productPage.selectProduct()
@@ -90,10 +90,10 @@ class MensShopingBag {
 		productDetailPage.verifyProductDetail()
 	}
 
-	@And("Customer chooses an available product size")
-	def chooseProductSize() {
-		productDetailPage.selectProductSize()
-	}
+	//	@And("Customer chooses an available product size")
+	//	def chooseProductSize() {
+	//		productDetailPage.selectProductSize()
+	//	}
 
 	@And("Customer clicks the add to bag button")
 	def clickAddToBagButton() {

@@ -11,5 +11,5 @@ Scenario Outline: Successful login with valid credentials
   Then Customer should see the home page
 
     Examples:
-      | email                          | password    |
-      | reynaldi.octavially@gmail.com  | @Aquila1998 |
+      | email                      | password    |
+      | reyoctavially98@gmail.com  | @Aquila1998 |
