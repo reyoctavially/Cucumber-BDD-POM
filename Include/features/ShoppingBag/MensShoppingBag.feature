@@ -1,6 +1,6 @@
 # Author: reynaldi.octavially@gmail.com
 
-Feature: Customer Checkout
+Feature: Mens Shopping Bag
 
 @mensNewArrival
 Scenario Outline: Successfully display and add products to shopping cart in mens new arrivals category

@@ -22,23 +22,26 @@ import internal.GlobalVariable
 import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.configuration.RunConfiguration
 
-public class productDetailPage {
+public class checkoutPage {
 
-	static final TestObject PRODUCT_TITLE = new TestObject().addProperty('class', ConditionType.EQUALS, "_17zx15t9s _17zx15t6q _17zx15tgg _17zx15the")
-	static final TestObject BAG_BUTTON = new TestObject().addProperty('xpath', ConditionType.EQUALS, "(//*[@id='base']/button)[3]")
-
-	static void verifyProductDetail() {
-		WebUI.verifyElementVisible(PRODUCT_TITLE)
-		WebUI.takeFullPageScreenshotAsCheckpoint('PRODUCT DETAIL')
+	static void selectShippingMethod(String shippingMethod) {
+	}
+	
+	static void selectPaymentMethod(String paymentMethod) {
 	}
 
-	//	static void selectProductSize() {
-	//
-	//	}
-
-	static void clickAddToBagButton() {
-		WebUI.scrollToElement(BAG_BUTTON, 0)
-		WebUI.click(BAG_BUTTON)
-		WebUI.delay(3)
+	static void clickCheckoutButton() {
+	}
+	
+	static void clickConfirmPaymentMethodButton() {
+		
+	}
+	
+	static void verifyOrderSummary() {
+	
+	}
+	
+	static void clickPlaceOrderButton() {
+		
 	}
 }

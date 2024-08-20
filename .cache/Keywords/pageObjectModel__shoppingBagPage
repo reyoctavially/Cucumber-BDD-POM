@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "5D325116B44AE48EC12D54C5EC154787",
+  "keywordFileContentHash": "D247B46BBB4B8A9836A59B96CCE8A346",
   "keywordClasses": [
     {
       "name": "pageObjectModel.shoppingBagPage",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }
