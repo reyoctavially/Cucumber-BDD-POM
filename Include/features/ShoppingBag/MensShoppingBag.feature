@@ -3,7 +3,7 @@
 Feature: Customer Checkout
 
 @mensNewArrival
-Scenario Outline: Successfully display and add products to shopping cart in mens new arrivals category with price under "<price>" and not in "<product1>" or "<product2>" categories
+Scenario Outline: Successfully display and add products to shopping cart in mens new arrivals category
   Given Customer chooses the "<category>" category
   When Customer selects "<productCategory>" from product categories
   And Customer applies filters product categories "<product1>", "<product2>", and "<product3>"
