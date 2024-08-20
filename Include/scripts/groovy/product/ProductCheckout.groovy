@@ -52,42 +52,36 @@ import pageObjectModel.paymentPage
 class ProductCheckout {
 	@Given("Customer clicks checkout button")
 	def clickCheckoutButton() {
-	    shoppingBagPage.clickCheckoutButton()
+		shoppingBagPage.clickCheckoutButton()
 	}
 
 	@When("Customer select shipping method {string}")
 	def selectShippingMethod(String shippingMethod) {
-	    checkoutPage.selectShippingMethod(shippingMethod)
-	}
-	
-	@And("Customer select payment method with bank transfer {string}")
-	def selectPaymentMethod(String paymentMethod) {
-	    checkoutPage.selectPaymentMethod(paymentMethod)
+		checkoutPage.selectShippingMethod(shippingMethod)
 	}
 
-	@And("Customers clicks confirm payment method button")
-	def clickConfirmPaymentMethodButton() {
-	    checkoutPage.clickConfirmPaymentMethodButton()
+	@And("Customer select payment method with {string} via {string}")
+	def selectPaymentMethod(String paymentMethod, String paymentMethodSelection) {
+		checkoutPage.selectPaymentMethod(paymentMethod, paymentMethodSelection)
 	}
-	
-	
+
 	@And("Customer verify order summary")
 	def verifyOrderSummary() {
-	    checkoutPage.verifyOrderSummary()
+		checkoutPage.verifyOrderSummary()
 	}
-	
+
 	@And("Customer clicks place order button")
 	def clickPlaceOrderButton() {
-	    checkoutPage.clickPlaceOrderButton()
+		checkoutPage.clickPlaceOrderButton()
 	}
-	
+
 	@And("Customer verify amount for payment")
 	def verifyAmountForPayment() {
-	    paymentPage.verifyPaymentAmount()
+		paymentPage.verifyPaymentAmount()
 	}
-	
+
 	@Then("Customer successfully checkout and paid using bank transfer")
 	def verifySuccessfulCheckout() {
-	    paymentPage.verifyOrderSuccess()
+		paymentPage.verifyOrderSuccess()
 	}
 }

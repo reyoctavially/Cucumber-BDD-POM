@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "37E46DBB06E221FAAAA5A5B1A1BF4244",
+  "keywordClasses": [
+    {
+      "name": "auth.CustomerLogin",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

@@ -24,23 +24,45 @@ import com.kms.katalon.core.configuration.RunConfiguration
 
 public class checkoutPage {
 
-	static final TestObject ALL_FILTER_SECTION = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//p[.='All Filters']")
+	static final TestObject SHIPPING_METHOD = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//div[@id='shipping-list']/div[@id='base']")
+	static final TestObject SHIPPING_CONFIRM_BUTTON = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//button[.='Confirm']")
+	static final TestObject LIST_PAYMENT_METHOD = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//div[@id='payment-list']/div[@id='base']")
+	static final TestObject PAYMENT_CONFIRM_BUTTON = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//button[contains(.,'Confirm Payment Method')]")
+	static final TestObject ORDER_SUMMARY_TITLE = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//p[@class='_17zx15t9c _17zx15t8x _17zx15t4g _17zx15tgg _17zx15te8']")
+	static final TestObject ORDER_AMOUNT = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//p[@class='_15kd2we68      _17zx15tgg _17zx15t9s _17zx15te8']")
+	static final TestObject PLACE_ODER_BUTTON = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//button[@class='_920fuu5 _920fuuf _920fuub _920fuu6']")
 
 	static void selectShippingMethod(String shippingMethod) {
+		TestObject SHIPPING_SERVICES = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//div[.='" + shippingMethod + "']")
+		WebUI.click(SHIPPING_METHOD)
+		WebUI.click(SHIPPING_SERVICES)
+		WebUI.click(SHIPPING_CONFIRM_BUTTON)
+		WebUI.delay(3)
 	}
 
-	static void selectPaymentMethod(String paymentMethod) {
-	}
-
-	static void clickCheckoutButton() {
-	}
-
-	static void clickConfirmPaymentMethodButton() {
+	static void selectPaymentMethod(String paymentMethod, String paymentMethodSelection) {
+		TestObject PAYMENT_METHOD = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//p[.='" + paymentMethod + "']")
+		TestObject SELECT_PAYMENT_METHOD = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//p[.='" + paymentMethodSelection + "']")
+		WebUI.scrollToElement(LIST_PAYMENT_METHOD, 0)
+		WebUI.click(LIST_PAYMENT_METHOD)
+		WebUI.click(PAYMENT_METHOD)
+		WebUI.click(SELECT_PAYMENT_METHOD)
+		WebUI.click(PAYMENT_CONFIRM_BUTTON)
+		WebUI.delay(3)
 	}
 
 	static void verifyOrderSummary() {
+		WebUI.waitForPageLoad(5)
+		WebUI.verifyElementPresent(ORDER_SUMMARY_TITLE, 30)
+		
+		String amount = WebUI.getText(ORDER_AMOUNT)
+		GlobalVariable.summaryAmount = amount
+		
+		WebUI.takeFullPageScreenshotAsCheckpoint('ORDER SUMMARY')
 	}
 
 	static void clickPlaceOrderButton() {
+		WebUI.click(PLACE_ODER_BUTTON)
+		WebUI.delay(3)
 	}
 }

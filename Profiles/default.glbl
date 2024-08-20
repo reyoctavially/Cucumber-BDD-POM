@@ -9,4 +9,9 @@
       <initValue>'https://voila.id/'</initValue>
       <name>homePageUrl</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>summaryAmount</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
