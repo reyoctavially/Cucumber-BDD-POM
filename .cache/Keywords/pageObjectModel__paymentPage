@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "627954170C514AEA73A50EF27AE4032A",
+  "keywordFileContentHash": "576F671D2F7DA4B1CAADFF0126FB14BF",
   "keywordClasses": [
     {
       "name": "pageObjectModel.paymentPage",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

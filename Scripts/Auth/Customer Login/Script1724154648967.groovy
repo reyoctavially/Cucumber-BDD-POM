@@ -17,5 +17,5 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-CucumberKW.runFeatureFileWithTags('Include/features/Login/CustomerLogin.feature', '@customerLogin')
+CucumberKW.runFeatureFileWithTags('Include/features/Auth/CustomerLogin.feature', '@customerLogin')
 

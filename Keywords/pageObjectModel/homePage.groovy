@@ -28,6 +28,7 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 public class homePage {
 	static final TestObject HOMEPAGE_LOGO = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//div[@class='j1jih74b j1jih7ak      _15kd2weg']//img[@alt='voila logo']")
 	static final TestObject SECTION_TITLE = new TestObject().addProperty('id', ConditionType.EQUALS, 'base')
+	static final TestObject SHOPPING_BAG_ICON = new TestObject().addProperty('css', ConditionType.EQUALS, "[data-test-id='CT-Go-To-Cart']")
 
 	static void open() {
 		RunConfiguration.setWebDriverPreferencesProperty("args", ["--window-size=1280,1024", "--incognito"])
@@ -46,7 +47,7 @@ public class homePage {
 		TestObject CATEGORY_BUTTON = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//a[.='" + category + "']")
 		WebUI.waitForElementClickable(CATEGORY_BUTTON, 30)
 		WebUI.click(CATEGORY_BUTTON)
-		WebUI.delay(3)
+		WebUI.delay(2)
 	}
 
 	static void selectProductCategory(String productCategory) {
@@ -58,10 +59,12 @@ public class homePage {
 		Actions actions = new Actions(driver)
 		actions.moveByOffset(10, 10).perform()
 
-		WebUI.delay(3)
+		WebUI.delay(2)
 		WebUI.waitForElementVisible(SECTION_TITLE, 30)
 	}
 
 	static void clickShoppingBagButton() {
+		WebUI.click(SHOPPING_BAG_ICON)
+		WebUI.delay(2)
 	}
 }

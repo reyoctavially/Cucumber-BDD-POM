@@ -25,8 +25,8 @@ import com.kms.katalon.core.util.KeywordUtil
 
 public class paymentPage {
 	static final TestObject PLACE_ORDER_TITLE = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//p[@class='_15kd2we7k   _15r4f4dgo   _17zx15t8w _17zx15te8 _17zx15t28']")
-	static final TestObject TOTAL_PAYMENT = new TestObject().addProperty('class', ConditionType.EQUALS, "_17zx15t9s _17zx15te8 _17zx15tgg")
-	
+	static final TestObject TOTAL_PAYMENT = new TestObject().addProperty('css', ConditionType.EQUALS, ".wovzo5a._15r4f4d1pj > #base > div:nth-of-type(2) > #base > #base > #base")
+
 	static void verifyPaymentAmount() {
 		String actualAmount = WebUI.getText(TOTAL_PAYMENT)
 		KeywordUtil.logInfo("Expected Amount: " + GlobalVariable.summaryAmount + ", Actual Amount: " + actualAmount)

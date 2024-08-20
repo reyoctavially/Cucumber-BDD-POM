@@ -48,21 +48,21 @@ public class checkoutPage {
 		WebUI.click(PAYMENT_METHOD)
 		WebUI.click(SELECT_PAYMENT_METHOD)
 		WebUI.click(PAYMENT_CONFIRM_BUTTON)
-		WebUI.delay(3)
+		WebUI.delay(2)
 	}
 
 	static void verifyOrderSummary() {
 		WebUI.waitForPageLoad(5)
 		WebUI.verifyElementPresent(ORDER_SUMMARY_TITLE, 30)
-		
+
 		String amount = WebUI.getText(ORDER_AMOUNT)
 		GlobalVariable.summaryAmount = amount
-		
+
 		WebUI.takeFullPageScreenshotAsCheckpoint('ORDER SUMMARY')
 	}
 
 	static void clickPlaceOrderButton() {
 		WebUI.click(PLACE_ODER_BUTTON)
-		WebUI.delay(3)
+		WebUI.delay(2)
 	}
 }

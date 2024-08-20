@@ -35,7 +35,7 @@ public class productPage {
 		TestObject PRODUCT_CATEGORY = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//div[@id='vds-accordion-root']//p[.='" + product + "']")
 		WebUI.scrollToElement(CATEGORY_SECTION, 30)
 		WebUI.click(PRODUCT_CATEGORY)
-		WebUI.delay(3)
+		WebUI.delay(2)
 	}
 
 	static void setPriceFilter(String price) {
@@ -44,14 +44,14 @@ public class productPage {
 		WebUI.sendKeys(PRICE_INPUT, Keys.chord(Keys.DELETE))
 		WebUI.setText(PRICE_INPUT, price)
 		WebUI.sendKeys(PRICE_INPUT, Keys.chord(Keys.ENTER))
-		WebUI.delay(3)
+		WebUI.delay(2)
 	}
 
 	static void clickAllFilterButton() {
 		WebUI.scrollToElement(ALL_FILTER_SECTION, 0)
 		WebUI.waitForElementClickable(ALL_FILTER_SECTION, 30)
 		WebUI.click(ALL_FILTER_SECTION)
-		WebUI.delay(3)
+		WebUI.delay(2)
 	}
 
 	static void seeProduct() {
@@ -63,6 +63,6 @@ public class productPage {
 		int randomIndex = new Random().nextInt(5 + 1)
 		TestObject SELECT_PRODUCT = new TestObject().addProperty('css', ConditionType.EQUALS, "[data-index='" + randomIndex + "']")
 		WebUI.click(SELECT_PRODUCT)
-		WebUI.delay(3)
+		WebUI.delay(2)
 	}
 }

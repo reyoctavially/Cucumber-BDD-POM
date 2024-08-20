@@ -30,7 +30,7 @@ public class loginPage {
 	static final TestObject LOGIN_BUTTON = new TestObject().addProperty('xpath', ConditionType.EQUALS, "//button[@class='_920fuu5 _920fuuf _920fuub _920fuu6 x63gt40']")
 
 	static void clickLoginButtonToNavigate() {
-		WebUI.delay(3)
+		WebUI.delay(2)
 		WebUI.waitForElementClickable(LOGIN_BUTTON_NAVIGATE, 30)
 		WebUI.click(LOGIN_BUTTON_NAVIGATE)
 	}

@@ -23,18 +23,18 @@ import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.configuration.RunConfiguration
 
 public class shoppingBagPage {
-	
+
 	static final TestObject SECTION_TITLE = new TestObject().addProperty('class', ConditionType.EQUALS, '_15r4f4daf   _17zx15te8 _17zx15ths _17zx15t80 _17zx15t4g')
 	static final TestObject CHECKOUT_BUTTON = new TestObject().addProperty('xpath', ConditionType.EQUALS, "(//*[@id='base']/button)[1]")
-	 
+
 	static void verifyProduct() {
 		WebUI.verifyElementPresent(SECTION_TITLE, 30)
 		WebUI.takeFullPageScreenshotAsCheckpoint('Shopping Bag')
 	}
 
 	static void clickCheckoutButton() {
-		WebUI.scrollToElement(CHECKOUT_BUTTON, 0)
+		WebUI.scrollToElement(SECTION_TITLE, 0)
 		WebUI.click(CHECKOUT_BUTTON)
-		WebUI.delay(3)
+		WebUI.delay(2)
 	}
 }

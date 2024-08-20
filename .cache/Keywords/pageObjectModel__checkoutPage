@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "B59D25872140047D617814AB1BA0E187",
+  "keywordFileContentHash": "1EEBE70B2A9C1CE2BC327BDA316DB913",
   "keywordClasses": [
     {
       "name": "pageObjectModel.checkoutPage",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": true
+  "javadocParsed": false
 }

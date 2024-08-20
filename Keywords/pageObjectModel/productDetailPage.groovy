@@ -37,8 +37,8 @@ public class productDetailPage {
 	//	}
 
 	static void clickAddToBagButton() {
-		WebUI.scrollToElement(BAG_BUTTON, 0)
+		WebUI.scrollToElement(PRODUCT_TITLE, 0)
 		WebUI.click(BAG_BUTTON)
-		WebUI.delay(3)
+		WebUI.delay(2)
 	}
 }
