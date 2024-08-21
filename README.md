@@ -1,4 +1,4 @@
-<h2>Automation Test with in Katalon Studio Using Cucumber BDD and Page Model Object</h2>
+<h2>Automation Test in Katalon Studio Using Cucumber BDD and Page Model Object</h2>
 <h3>
     HTML Report Detail
     <br />
