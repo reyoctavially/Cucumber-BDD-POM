@@ -16,7 +16,7 @@ https://drive.google.com/uc?export=view&id=1tSnssG6BKLEhGA-26VUyeMgkJX2FPrPK
 <br />
 https://drive.google.com/uc?export=view&id=1LqTuH9HI-W_aoBySvXo5Ea3wOUB6k_7z
 <br />
-<b>Product Checkout</b>
+<b>Product Checkout Scenario</b>
 <br />
 https://drive.google.com/uc?export=view&id=1EOt8BO6d8VAM13rXkKgs6FynVdbtLxXs
 <br />
@@ -25,7 +25,7 @@ https://drive.google.com/uc?export=view&id=1EOt8BO6d8VAM13rXkKgs6FynVdbtLxXs
 https://drive.google.com/uc?export=view&id=1lAVRBYjay68HYsCKBsVprYxCQoM_YoP7
 <br />
 <h3>
-    Test Case Scenario and Bug List
+    Test Case Scenario (Jira Xray) and Bug List
     <br />
     https://docs.google.com/spreadsheets/d/1Y2DxidvkR2bcehq0Pkr07AoiCndMjd-a/edit?usp=sharing&ouid=116415348848308755539&rtpof=true&sd=true
 </h3>
